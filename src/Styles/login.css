@@ -1,0 +1,98 @@
+/* Réinitialisation de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centrage de la div principale */
+.login-container {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo centré et responsive */
+.srm-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Titre */
+.login-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Champs de formulaire */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #000;
+  background-color: #fff;
+}
+
+/* Bouton */
+button {
+  padding: 12px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive pour téléphones */
+@media screen and (max-width: 768px) {
+  .login-container {
+    padding: 20px;
+  }
+
+  .srm-logo {
+    width: 80px;
+  }
+
+  input, button {
+    font-size: 14px;
+  }
+}
