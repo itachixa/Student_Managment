@@ -2,8 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
-import Student from './page/Student';
-import Teacher from './page/teacher';
+import Student from './view/Student';
+import Teacher from './view/teacher';
+import Home from './view/Home';
+import Attendance from './view/Attendance';
+import Chat from './view/chat';
+import Courses from './view/Courses';
+import Event from './view/event';
+import Timetable from './view/Timetable';
+import Marks from './view/marks';
+import Calendar from './view/Calendar';
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -12,6 +22,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path="/page/Student" element={<Student />} />
         <Route path="/page/teacher" element={<Teacher />} />
+        <Route path="/Page/home" element={<Home />} />
+        <Route path="/Attendance" element={<Attendance />} />
+        <Route path="/Courses" element={<Courses />} />
+        <Route path="/event" element={<Event />} />
+        <Route path="/Timetable" element={<Timetable />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/marks" element={<Marks />} />
+        <Route path="/Calendar" element={<Calendar />} />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

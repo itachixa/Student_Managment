@@ -1,74 +1,57 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #f8f4f4;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  padding: 0;
+/* Pour centrer verticalement et horizontalement la page */
+.center-page {
   height: 100vh;
-  min-height: 100vh;
+  width: 100vw; /* Correction ici : width doit être 100% de la largeur de la fenêtre */
   display: flex;
-  justify-content: center;  /* Centre horizontalement */
-  align-items: center;      /* Centre verticalement */
-  background-color: #121212; /* Fond sombre */
-  background-image: url('background.png');
+  justify-content: center;
+  align-items: center;
+  background-image: url('background.png'); /* Remplace avec le bon chemin */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding: 20px; /* Un petit padding pour éviter que ça touche les bords */
+  box-sizing: border-box;
 }
 
-
-/* Conteneur des boutons côte à côte */
+/* Conteneur de boutons */
 .button-container {
   display: flex;
-  gap: 20px; /* espace entre les deux boutons */
+  flex-wrap: wrap; /* Permet de passer à la ligne si l’écran est petit */
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
 }
 
-/* Style des boutons */
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  color: white;
+/* Style des boutons avec icônes */
+.button-link {
+  text-decoration: none;
+}
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  border: 2px solid #007bff;
+  color: #007bff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
   cursor: pointer;
-  transition: border-color 0.25s;
+  min-width: 160px;
+  text-align: center;
 }
 
-button:hover {
-  border-color: #646cff;
+.icon-button:hover {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.05);
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
+.icon {
+  font-size: 22px;
 }

@@ -1,18 +1,21 @@
+import { useNavigate } from 'react-router-dom'; // 👈 import du hook
 import '../Styles/login.css';
-import logo from '../assets/SRM.png'; // Make sure the logo is in this location
+import logo from '../assets/SRM.png';
 
 function Login() {
+  const navigate = useNavigate(); // 👈 initialisation du hook
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Logging in...");
+
+    navigate('../page/Home'); // 👈 redirection vers la page "home"
   };
 
   return (
     <>
+    <div className='Login'>
       <div className="login-container">
-        {/* SRM Logo */}
         <img src={logo} alt="SRM Logo" className="srm-logo" />
-
         <h2>SRM Student Login</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Student Email:</label>
@@ -23,6 +26,7 @@ function Login() {
 
           <button type="submit">Log In</button>
         </form>
+      </div>
       </div>
     </>
   );

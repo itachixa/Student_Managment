@@ -1,28 +1,26 @@
 import './index.css';
 import { Link } from 'react-router-dom';
+import { FaUserGraduate, FaChalkboardTeacher } from 'react-icons/fa';
 
 function App() {
   return (
-    <>
-      <div className='Page'>
-        <div className='Pag'>
-          <div className="button-container">
-            <Mybutton name="Student" path="./page/Student" />
-            <Mybutton name="teacher" path="./page/teacher" />
-          </div>
-        </div>
+    <div className='Page center-page'>
+      <div className="button-container">
+        <Mybutton name="Student" path="./page/Student" icon={<FaUserGraduate />} />
+        <Mybutton name="Teacher" path="./page/teacher" icon={<FaChalkboardTeacher />} />
       </div>
-    </>
+    </div>
   );
 }
 
-function Mybutton({ name, path }) {
+function Mybutton({ name, path, icon }) {
   return (
-    <div>
-      <Link to={path}>
-        <button>{name}</button>
-      </Link>
-    </div>
+    <Link to={path} className="button-link">
+      <button className="icon-button">
+        <span className="icon">{icon}</span>
+        <span className="label">{name}</span>
+      </button>
+    </Link>
   );
 }
 

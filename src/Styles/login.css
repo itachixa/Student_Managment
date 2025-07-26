@@ -1,31 +1,32 @@
 /* Réinitialisation de base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+.Login {
+  height: 100vh;
+  width: 100%;
+  background-image: url('../background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-body, html {
-  height: 100%;
-  font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
-  color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+
+
+
+
 /* Centrage de la div principale */
 .login-container {
-  background-color: #fff;
   padding: 30px 40px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 100%;
+  width: 50%;
   max-width: 400px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+   align-items: center;
+  justify-content: center;
 }
 
 /* Logo centré et responsive */
