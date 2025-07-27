@@ -100,3 +100,14 @@
   transform: translateY(-5px);
   background-color: #f1f1f1;
 }
+.settings-icon-custom {
+  font-size: 30px;;
+  color: #00BFFF; /* Bleu clair ou change à ton goût */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.settings-icon-custom:hover {
+  transform: rotate(90deg);
+  color: #1E90FF;
+}
+

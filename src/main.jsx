@@ -12,6 +12,7 @@ import Event from './view/event';
 import Timetable from './view/Timetable';
 import Marks from './view/marks';
 import Calendar from './view/Calendar';
+import Setting from './components/Setting';
 
 
 
@@ -22,7 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path="/page/Student" element={<Student />} />
         <Route path="/page/teacher" element={<Teacher />} />
-        <Route path="/Page/home" element={<Home />} />
+        <Route path="/Page/Home" element={<Home />} />
         <Route path="/Attendance" element={<Attendance />} />
         <Route path="/Courses" element={<Courses />} />
         <Route path="/event" element={<Event />} />
@@ -30,7 +31,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/chat" element={<Chat />} />
         <Route path="/marks" element={<Marks />} />
         <Route path="/Calendar" element={<Calendar />} />
-
+        <Route path="/Home" element={<Home />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/Setting" element={<Setting />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
