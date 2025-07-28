@@ -1,5 +1,5 @@
 {
-  "name": "My School App",
+  "name": "SRM APP",
   "short_name": "SchoolApp",
   "start_url": "/",
   "display": "standalone",
@@ -8,12 +8,12 @@
   "description": "Your weekly timetable and marks manager",
   "icons": [
     {
-      "src": "/icons/icon-192x192.png",
+      "src": "/image.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/icons/icon-512x512.png",
+      "src": "/image.png",
       "type": "image/png",
       "sizes": "512x512"
     }
