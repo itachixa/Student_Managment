@@ -14,7 +14,9 @@ import Marks from './view/marks';
 import Calendar from './view/Calendar';
 import Setting from './components/Setting';
 
+import { registerSW } from 'virtual:pwa-register'
 
+registerSW({ immediate: true })
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
