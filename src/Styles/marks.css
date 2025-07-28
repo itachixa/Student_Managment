@@ -1,0 +1,38 @@
+.marks-page {
+  padding: 2rem;
+  background-color: #f8faff;
+  min-height: 100vh;
+}
+
+.marks-title {
+  font-size: 2rem;
+  color: #1e40af;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  color: #1e40af;
+  width: 24px;
+  height: 24px;
+}
+
+.marks-section {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.marks-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background-color: white;
+  transition: transform 0.3s;
+}
+
+.marks-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}

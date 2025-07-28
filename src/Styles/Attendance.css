@@ -1,0 +1,79 @@
+.attendance-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.attendance-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.subject-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.requirement {
+  color: #d9534f;
+}
+
+.margin {
+  color: #0275d8;
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.present {
+  background-color: #dff0d8;
+  color: #3c763d;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.absent {
+  background-color: #f2dede;
+  color: #a94442;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.total {
+  background-color: #eee;
+  color: #555;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.percentage {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.percentage.low {
+  color: #d9534f;
+}
+
+.percentage.good {
+  color: #5cb85c;
+}
