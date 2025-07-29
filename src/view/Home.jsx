@@ -6,6 +6,7 @@ import bgImage from "../assets/background.png";
 
 function Home() {
   return (
+    
     <div className="home-container" style={{ backgroundImage: `url(${bgImage})` }}>
       <div className="overlay" />
 

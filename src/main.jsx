@@ -13,6 +13,12 @@ import Timetable from './view/Timetable';
 import Marks from './view/marks';
 import Calendar from './view/Calendar';
 import Setting from './components/Setting';
+import './firebase';
+
+
+
+
+
 
 import { registerSW } from 'virtual:pwa-register'
 

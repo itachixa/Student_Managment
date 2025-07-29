@@ -19,19 +19,19 @@
   flex-wrap: wrap; /* Permet de passer à la ligne si l’écran est petit */
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 10px;
 }
 
 /* Style des boutons avec icônes */
 .button-link {
-  text-decoration: none;
+  text-decoration: double;
 }
 
 .icon-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
   background-color: white;
   border: 2px solid #007bff;
   color: #007bff;
@@ -42,7 +42,8 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
   cursor: pointer;
-  min-width: 160px;
+  min-width: 10px;
+  max-width: 160px;
   text-align: center;
 }
 

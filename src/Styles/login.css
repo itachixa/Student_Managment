@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 
@@ -21,12 +22,13 @@
   padding: 30px 40px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 50%;
+  width: 80%;
   max-width: 400px;
   display: flex;
   flex-direction: column;
    align-items: center;
   justify-content: center;
+
 }
 
 /* Logo centré et responsive */
