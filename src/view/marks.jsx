@@ -8,16 +8,25 @@ const Marks = () => {
     <div className="page">
       <BackButton to="/Home" label="Back" iconSize={18} />
       <header className="page-header">
-        <FaFileAlt className="icon" />
-        <h1>Marks</h1>
+        <center>
+          <FaFileAlt size={60} color="#007BFF" className="icon" />
+          <h2>Marks</h2>
+        </center>
       </header>
       <section className="page-content">
         <p>Your marks will be displayed here once available.</p>
         <ul>
-          <li>Math: 18/20</li>
-          <li>Physics: 15/20</li>
-          <li>English: 17/20</li>
+          <li className="Marks">Data Structure and Algorithms <p className="value">14/15</p></li>
+          <li className="Marks">Transforme and Bonudary  Value Probleme<p className="value">14/15</p></li>
+          <li className="Marks">Advance  programming <p className="value">14/15</p></li>
+          <li className="Marks">Operating Systemes<p className="value">14/15</p></li>
+          <li className="Marks">Universal Human Vailue<p className="value">14/15</p></li>
+          <li className="Marks">Microbiology<p className="value">14/15</p>
+          </li>
+          <li className="Marks">Professional Ethique<p className="value">14/15</p> </li>
         </ul>
+        
+       
       </section>
     </div>
   );

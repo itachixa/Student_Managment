@@ -7,8 +7,10 @@ const Timetable = () => {
     <div className="page">
       <BackButton to="/Home" label="Back" iconSize={18} />
       <header className="page-header">
-        <FaCalendarAlt className="icon" />
+        <center>
+        <FaCalendarAlt size={60} color="#007BFF" />
         <h1>Timetable</h1>
+        </center>
       </header>
       <section className="page-content">
         <p>Here is your weekly schedule:</p>
@@ -23,19 +25,19 @@ const Timetable = () => {
           </thead>
           <tbody>
             <tr>
-              <td>Monday</td>
+              <td>Day1</td>
               <td>Math</td>
               <td>English</td>
               <td>Computer Science</td>
             </tr>
             <tr>
-              <td>Tuesday</td>
+              <td>Day2</td>
               <td>Physics</td>
               <td>Algorithms</td>
               <td>Break</td>
             </tr>
             <tr>
-              <td>Wednesday</td>
+              <td>Day3</td>
               <td colSpan="3">No Classes</td>
             </tr>
             {/* Add more rows as needed */}
