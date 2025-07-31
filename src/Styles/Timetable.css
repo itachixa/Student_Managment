@@ -1,0 +1,65 @@
+.page {
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fc;
+  min-height: 100vh;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  color: #007BFF;
+  margin-top: 0.5rem;
+}
+
+.page-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+.timetable {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.timetable th,
+.timetable td {
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+.timetable thead {
+  background-color: #007BFF;
+  color: white;
+}
+
+.timetable tbody tr:nth-child(even) {
+  background-color: #f1f9ff;
+}
+
+.timetable tbody tr:hover {
+  background-color: #e6f0ff;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .timetable {
+    font-size: 0.85rem;
+  }
+
+  .timetable th,
+  .timetable td {
+    padding: 0.6rem;
+  }
+}

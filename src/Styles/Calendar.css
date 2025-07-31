@@ -1,0 +1,29 @@
+.calendar-container {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.calendar-header,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.calendar-cell {
+  padding: 10px 0;
+  border: 1px solid #ddd;
+}
+
+.calendar-cell.header {
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+}
+
+.calendar-cell.empty {
+  background-color: #f9f9f9;
+  border: none;
+}
