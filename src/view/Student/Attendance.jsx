@@ -1,6 +1,6 @@
 import React from "react";
-import "../Styles/Attendance.css";
-import BackButton from '../components/BackButton';
+import "../../Styles/Student/Attendance.css";
+import BackButton from '../../components/BackButton';
 
 const attendanceData = [
   {

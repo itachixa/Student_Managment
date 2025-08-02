@@ -1,29 +1,88 @@
-.calendar-container {
-  width: 100%;
-  max-width: 350px;
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
+.calendar-page {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.calendar-header,
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+.calendar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.calendar-header h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.calendar-content {
+  overflow-x: auto;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.calendar-table th,
+.calendar-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
   text-align: center;
 }
 
-.calendar-cell {
-  padding: 10px 0;
-  border: 1px solid #ddd;
-}
-
-.calendar-cell.header {
-  font-weight: bold;
-  background-color: #007bff;
+.calendar-table th {
+  background-color: #007BFF;
   color: white;
+  font-size: 1rem;
 }
 
-.calendar-cell.empty {
+.school-day {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.holiday {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.calendar-table tr:nth-child(even) {
   background-color: #f9f9f9;
-  border: none;
+}
+
+.calendar-table tr:hover {
+  background-color: #e9f5ff;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .calendar-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .calendar-table th,
+  .calendar-table td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-header {
+    justify-content: center;
+  }
+
+  .calendar-header h2 {
+    text-align: center;
+    width: 100%;
+  }
+
+  .calendar-table {
+    min-width: 100%;
+    font-size: 0.8rem;
+  }
 }

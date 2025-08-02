@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase'; // ← Import de ton fichier firebase
-import '../Styles/login.css';
-import logo from '../assets/SRM.png';
+import { auth } from '../../firebase'; // ← Import de ton fichier firebase
+import '../../Styles/login.css';
+import logo from '../../assets/SRM.png';
 import { useState } from 'react';
 
 function Login() {
@@ -14,7 +14,7 @@ function Login() {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate('../page/Home'); // redirection si tout va bien
+      navigate('../home/proffesor'); // redirection si tout va bien
     } catch (error) {
       alert("Erreur de connexion : " + error.message);
     }
@@ -24,7 +24,7 @@ function Login() {
     <div className='Login'>
       <div className="login-container">
         <img src={logo} alt="SRM Logo" className="srm-logo" />
-        <h2>SRM Student Login</h2>
+        <h2>SRM Professor Login</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Student Email</label>
           <input type="email" id="email" required placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />

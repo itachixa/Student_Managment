@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FiSettings } from "react-icons/fi"; // Icône paramètre stylisable
-import "../Styles/Home.css";
-import bgImage from "../assets/background.png";
+import "../../Styles/Student/Home.css";
+import bgImage from "../../assets/background.png";
 
-function Home() {
+function Home_professor() {
   return (
     
     <div className="home-container" style={{ backgroundImage: `url(${bgImage})` }}>
@@ -24,9 +24,9 @@ function Home() {
         </header>
 
         <div className="card-grid">
-          <Link to="/Attendance" className="card">📊 Attendance</Link>
+          <Link to="/page/proffesor/Attendance" className="card">📊 Attendance</Link>
           <Link to="/Timetable" className="card">🕒 Timetable</Link>
-          <Link to="/marks" className="card">📈 Marks</Link>
+          <Link to="/page/proffesor/MarksP" className="card">📈 Marks</Link>
           <Link to="/Calendar" className="card">📅 Calendar</Link>
           <Link to="/event" className="card">🏛️ Events</Link>
           <Link to="/Courses" className="card">📚 Courses</Link>
@@ -39,4 +39,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home_professor;

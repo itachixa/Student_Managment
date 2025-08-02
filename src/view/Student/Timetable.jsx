@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { FaCalendarAlt } from "react-icons/fa";
-import BackButton from "../components/BackButton";
-import "../Styles/Event.css";
+import BackButton from "../../components/BackButton";
+import "../../Styles/Event.css";
 import { useReactToPrint } from "react-to-print";
 
 const Timetable = () => {

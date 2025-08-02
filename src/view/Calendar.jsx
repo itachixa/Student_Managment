@@ -1,86 +1,74 @@
-// src/pages/Calendar.jsx
 import React from 'react';
 import { FaCalendarAlt } from 'react-icons/fa';
 import BackButton from '../components/BackButton';
+import '../Styles/Calendar.css';
 
-const joursSemaine = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
-
-function genererCalendrier(mois, annee) {
-  const premierJour = new Date(annee, mois, 1);
-  const dernierJour = new Date(annee, mois + 1, 0);
-  const nombreJours = dernierJour.getDate();
-
-  const calendrier = Array.from({ length: 7 }, () => []); // 7 colonnes (jours)
-
-  for (let jour = 1; jour <= nombreJours; jour++) {
-    const date = new Date(annee, mois, jour);
-    let indexJour = date.getDay(); // 0 = Dim, 1 = Lun, ..., 6 = Sam
-
-    // Recaler pour que lundi soit 0
-    indexJour = (indexJour + 6) % 7;
-
-    calendrier[indexJour].push(jour);
-  }
-
-  const lignes = Math.max(...calendrier.map(col => col.length));
-  return { calendrier, lignes };
-}
-
-const Calendar = () => {
-  const mois = 7; // Août
-  const annee = 2025;
-  const { calendrier, lignes } = genererCalendrier(mois, annee);
+function Calendar() {
+  const days = [
+    { day: 1, type: 'Day 1', description: 'First day of the month' },
+    { day: 2, type: 'Day 2', description: 'Class meeting' },
+    { day: 3, type: 'Day 3', description: 'Math quiz' },
+    { day: 4, type: 'Day 4', description: 'Project submission' },
+    { day: 5, type: 'Day 5', description: 'Sports practice' },
+    { day: 6, type: 'Holiday', description: 'Weekend break' },
+    { day: 7, type: 'Holiday', description: 'Weekend break' },
+    { day: 8, type: 'Day 1', description: 'Science fair' },
+    { day: 9, type: 'Day 2', description: 'Midweek review' },
+    { day: 10, type: 'Day 3', description: 'Parent meeting' },
+    { day: 11, type: 'Day 4', description: 'History presentation' },
+    { day: 12, type: 'Day 5', description: 'Art workshop' },
+    { day: 13, type: 'Holiday', description: 'Mock exam' },
+    { day: 14, type: 'Holiday', description: 'Club activities' },
+    { day: 15, type: 'Day 1', description: 'Holiday' },
+    { day: 16, type: 'Day 2', description: 'Back to class' },
+    { day: 17, type: 'Day 3', description: 'Team assignment' },
+    { day: 18, type: 'Day 4', description: 'Health seminar' },
+    { day: 19, type: 'Day 5', description: 'Debate competition' },
+    { day: 20, type: 'Holiday', description: 'Coding challenge' },
+    { day: 21, type: 'Holiday', description: 'Weekly review' },
+    { day: 22, type: 'Day 1', description: 'Sports event' },
+    { day: 23, type: 'Day 2', description: 'Clean-up campaign' },
+    { day: 24, type: 'Day 3', description: 'Final project defense' },
+    { day: 25, type: 'Day 4', description: 'Guest lecture' },
+    { day: 26, type: 'Day 5', description: 'Practical exam' },
+    { day: 27, type: 'Holiday', description: 'Community service' },
+    { day: 28, type: 'Holiday', description: 'Cultural day' },
+    { day: 29, type: 'Day 1', description: 'Quiz competition' },
+    { day: 30, type: 'Day 2', description: 'Last class' },
+    { day: 31, type: 'Day 3', description: 'Month-end review' },
+  ];
 
   return (
-    <div className="calendar-page" style={{ padding: '20px' }}>
+    <div className="calendar-page">
       <BackButton to="/Home" label="Back" iconSize={18} />
-
-      <div className="calendar-content" style={{ marginTop: '20px' }}>
-        <center>
-          <FaCalendarAlt size={80} color="#007BFF" />
-          <h2>Calendar</h2>
-        </center>
-        <p style={{ textAlign: 'center' }}>
-          Stay updated with all your events and important school dates.
-        </p>
-
-        <h3 style={{ textAlign: 'center', marginTop: '30px' }}>Août 2025</h3>
-
-        <div style={{ overflowX: 'auto', marginTop: '10px' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center' }}>
-            <thead>
-              <tr>
-                {joursSemaine.map((jour, i) => (
-                  <th key={i} style={{ border: '1px solid #ddd', padding: '8px', backgroundColor: '#f0f8ff' }}>
-                    {jour}
-                  </th>
-                ))}
+      <div className="calendar-header">
+        <FaCalendarAlt size={50} color="#007BFF" />
+        <h2>School Calendar - August 2025</h2>
+      </div>
+      <div className="calendar-content">
+        <table className="calendar-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Day Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {days.map((item) => (
+              <tr key={item.day}>
+                <td>{item.day}</td>
+                <td className={item.type === 'Holiday' ? 'holiday' : 'school-day'}>
+                  {item.type}
+                </td>
+                <td>{item.description}</td>
               </tr>
-            </thead>
-            <tbody>
-              {[...Array(lignes)].map((_, ligneIdx) => (
-                <tr key={ligneIdx}>
-                  {calendrier.map((colonne, colIdx) => (
-                    <td
-                      key={colIdx + '-' + ligneIdx}
-                      style={{
-                        border: '1px solid #ddd',
-                        padding: '12px',
-                        height: '40px',
-                        backgroundColor: '#ffffff'
-                      }}
-                    >
-                      {colonne[ligneIdx] || ''}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
-};
+}
 
 export default Calendar;

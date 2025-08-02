@@ -2,17 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
-import Student from './view/Student';
-import Teacher from './view/teacher';
-import Home from './view/Home';
-import Attendance from './view/Attendance';
+import Student from './view/Student/Student';
+import Teacher from './view/proffesor/teacher';
+import Home_professor from './view/proffesor/Home';
+import Home from './view/Student/Home';
+import Attendance from './view/Student/Attendance';
 import Chat from './view/chat';
-import Courses from './view/Courses';
+import Courses from './view/Student/Courses';
 import Event from './view/event';
-import Timetable from './view/Timetable';
-import Marks from './view/marks';
+import Timetable from './view/Student/Timetable';
+import Marks from './view/Student/marks';
 import Calendar from './view/Calendar';
 import Setting from './components/Setting';
+import AttendanceP from './view/proffesor/Attendance';
+import MarksP from './view/proffesor/MarksP';
 import './firebase';
 
 
@@ -38,6 +41,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/page/Student" element={<Student />} />
+        <Route path="/page/proffesor/Attendance" element={<AttendanceP />} />
+        <Route path="/page/proffesor/MarksP" element={<MarksP />} />
         <Route path="/page/teacher" element={<Teacher />} />
         <Route path="/Page/Home" element={<Home />} />
         <Route path="/Attendance" element={<Attendance />} />
@@ -50,6 +55,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/Home" element={<Home />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/Setting" element={<Setting />} />
+        <Route path="/home/proffesor" element={<Home_professor />} />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

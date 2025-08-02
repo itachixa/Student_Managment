@@ -1,6 +1,6 @@
 import { FaBookOpen } from 'react-icons/fa';
-import BackButton from '../components/BackButton';
-import "../Styles/Courses.css"
+import BackButton from '../../components/BackButton';
+import "../../Styles/Student/Courses.css"
 
 function Courses() {
   return (
@@ -10,6 +10,7 @@ function Courses() {
       <FaBookOpen size={60} color="#007BFF" />
       <h2>Courses</h2>
       </center>
+      <center>
       <p>View your enrolled courses and access materials.</p>
       <section className="page-content">
       <ul>
@@ -25,6 +26,7 @@ function Courses() {
           <li className="Marks">Professional Ethique</li>
         </ul>
         </section>
+        </center>
         
     </div>
   );

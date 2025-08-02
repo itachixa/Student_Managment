@@ -1,0 +1,46 @@
+.Marks {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  margin-right: 15%;
+  width: 85%;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: transform 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.Marks:hover {
+  transform: scale(1.03);
+  background-color: #bbdefb;
+}
+
+.Marks .label {
+  text-align: center;
+  flex: 1;
+}
+
+.Marks .value {
+  min-width: 60px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Couleur selon la note */
+.value.good {
+  color: green;
+}
+
+.value.medium {
+  color: orange;
+}
+
+.value.bad {
+  color: red;
+}
