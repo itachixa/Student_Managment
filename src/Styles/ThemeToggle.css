@@ -1,0 +1,51 @@
+.theme-toggle-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(29, 27, 27, 0.7);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Dark Mode global */
+body.dark-mode {
+  background-color: #000000 !important;
+  color: #fdfcfc !important;
+}
+
+/* Appliquer à tes boutons/cards */
+body.dark-mode .card {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border: 1px solid #333;
+}
+body.dark-mode .sentence{
+    color: #fff;
+
+}
+body.dark-mode .home-container{
+    background-color: #000000;
+}
+body.dark-mode .overlay{
+    color: #000000;
+}
+
+body.dark-mode .settings-icon-custom {
+  color: #00BFFF;
+}
+
+/* Overlay légère pour foncer le fond */
+body.dark-mode .overlay {
+  background: rgba(0, 0, 0, 0.5);
+}

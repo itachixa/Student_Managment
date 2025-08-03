@@ -1,9 +1,9 @@
 import { FaCalendarAlt } from 'react-icons/fa';
-import BackButton from '../components/BackButton';
-import sportImg from "../assets/img/sport.png";
-import sruImg from "../assets/img/srujan.png";
-import hackathonImg from "../assets/img/hackathon.png";
-import "../Styles/Event.css";
+import BackButton from '../../components/BackButton';
+import sportImg from "../../assets/img/sport.png";
+import sruImg from "../../assets/img/srujan.png";
+import hackathonImg from "../../assets/img/hackathon.png";
+import "../../Styles/Event.css";
 import { useState, useEffect } from "react";
 
 // === Base des événements ===
@@ -25,7 +25,7 @@ const eventData = [
   }
 ];
 
-function Event() {
+function Event_prof() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Rotation automatique toutes les 5 secondes
@@ -40,7 +40,7 @@ function Event() {
 
   return (
     <div className="page">
-      <BackButton to="/Home" label="Back" iconSize={18} />
+      <BackButton to="/home/proffesor" label="Back" iconSize={18} />
       <center>
         <FaCalendarAlt size={60} color="#007BFF" />
         <h2>Events</h2>
@@ -64,4 +64,4 @@ function Event() {
   );
 }
 
-export default Event;
+export default Event_prof;

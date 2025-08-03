@@ -7,15 +7,20 @@ import Teacher from './view/proffesor/teacher';
 import Home_professor from './view/proffesor/Home';
 import Home from './view/Student/Home';
 import Attendance from './view/Student/Attendance';
-import Chat from './view/chat';
+import Chat from './view/Student/chat';
 import Courses from './view/Student/Courses';
-import Event from './view/event';
+import Event from './view/Student/event';
 import Timetable from './view/Student/Timetable';
 import Marks from './view/Student/marks';
-import Calendar from './view/Calendar';
+import Calendar from './view/Student/Calendar';
 import Setting from './components/Setting';
 import AttendanceP from './view/proffesor/Attendance';
 import MarksP from './view/proffesor/MarksP';
+import Timetable_prof from './view/proffesor/Timetable';
+import Calendar_prof from './view/proffesor/Calendar';
+import Event_prof from './view/proffesor/event';
+import Chat_prof from './view/proffesor/chat';
+import Courses_Prof from './view/proffesor/Courses';
 import './firebase';
 
 
@@ -56,6 +61,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/chat" element={<Chat />} />
         <Route path="/Setting" element={<Setting />} />
         <Route path="/home/proffesor" element={<Home_professor />} />
+        <Route path="/home/proffesor/Timetable" element={<Timetable_prof />} />
+        <Route path="/home/proffesor/calendar" element={<Calendar_prof />} />
+        <Route path="/home/proffesor/Event" element={<Event_prof />} />
+        <Route path="/home/proffesor/Chat" element={<Chat_prof />} />
+        <Route path="/home/proffesor/Corses" element={<Courses_Prof/>} />
+
 
       </Routes>
     </BrowserRouter>

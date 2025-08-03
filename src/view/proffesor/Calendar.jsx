@@ -1,9 +1,9 @@
 import React from 'react';
 import { FaCalendarAlt } from 'react-icons/fa';
-import BackButton from '../components/BackButton';
-import '../Styles/Calendar.css';
+import BackButton from '../../components/BackButton';
+import '../../Styles/Calendar.css';
 
-function Calendar() {
+function Calendar_prof() {
   const days = [
     { day: 1, type: 'Day 1', description: 'First day of the month' },
     { day: 2, type: 'Day 2', description: 'Class meeting' },
@@ -40,7 +40,7 @@ function Calendar() {
 
   return (
     <div className="calendar-page">
-      <BackButton to="/Home" label="Back" iconSize={18} />
+      <BackButton to="/home/proffesor" label="Back" iconSize={18} />
       <div className="calendar-header">
         <FaCalendarAlt size={50} color="#007BFF" />
         <h2>School Calendar - August 2025</h2>
@@ -71,4 +71,4 @@ function Calendar() {
   );
 }
 
-export default Calendar;
+export default Calendar_prof;

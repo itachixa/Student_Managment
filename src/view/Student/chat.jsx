@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaComments } from 'react-icons/fa';
-import BackButton from '../components/BackButton';
-import '../Styles/Chat.css';
+import BackButton from '../../components/BackButton';
+import '../../Styles/Chat.css';
 
 function Chat() {
   const [messages, setMessages] = useState([
