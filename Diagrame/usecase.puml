@@ -1,0 +1,40 @@
+@startuml
+left to right direction
+
+actor Student
+actor Professor
+actor Admin
+
+rectangle "Academic Platform" {
+    usecase "Login / Signup" as UC1
+    usecase "View Calendar" as UC2
+    usecase "Send Message" as UC3
+    usecase "Receive Message" as UC4
+    usecase "Mark Attendance" as UC5
+    usecase "Assign Grades" as UC6
+    usecase "View Grades" as UC7
+    usecase "View Attendance" as UC8
+    usecase "Manage Users" as UC9
+}
+
+Student --> UC1
+Professor --> UC1
+Admin --> UC1
+
+Student --> UC2
+Professor --> UC2
+
+Student --> UC3
+Professor --> UC3
+
+Student --> UC4
+Professor --> UC4
+
+Professor --> UC5
+Professor --> UC6
+
+Student --> UC7
+Student --> UC8
+
+Admin --> UC9
+@enduml

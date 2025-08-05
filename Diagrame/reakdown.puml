@@ -1,0 +1,30 @@
+@startuml
+
+package "Academic Platform" {
+  [Authentication Module]
+  [Messaging Module]
+  [Calendar Module]
+  [Grade Management]
+  [Attendance Management]
+  [User Management]
+  [Frontend (React/Flutter)]
+  [Backend (Node.js/Django)]
+  [Database (PostgreSQL/MySQL)]
+}
+
+[Authentication Module] --> [Backend (Node.js/Django)]
+[Messaging Module] --> [Backend (Node.js/Django)]
+[Calendar Module] --> [Backend (Node.js/Django)]
+[Grade Management] --> [Backend (Node.js/Django)]
+[Attendance Management] --> [Backend (Node.js/Django)]
+[User Management] --> [Backend (Node.js/Django)]
+
+[Backend (Node.js/Django)] --> [Database (PostgreSQL/MySQL)]
+[Frontend (React/Flutter)] --> [Authentication Module]
+[Frontend (React/Flutter)] --> [Messaging Module]
+[Frontend (React/Flutter)] --> [Calendar Module]
+[Frontend (React/Flutter)] --> [Grade Management]
+[Frontend (React/Flutter)] --> [Attendance Management]
+[Frontend (React/Flutter)] --> [User Management]
+
+@enduml

@@ -1,0 +1,65 @@
+@startuml
+
+class User {
+  - id: int
+  - email: string
+  - password: string
+  + login()
+  + sendMessage()
+  + viewCalendar()
+}
+
+class Student {
+  - studentId: string
+  + viewGrades()
+  + viewAttendance()
+}
+
+class Professor {
+  - professorId: string
+  + assignGrades()
+  + markAttendance()
+}
+
+class Message {
+  - messageId: int
+  - content: string
+  - timestamp: DateTime
+  + send()
+}
+
+class Grade {
+  - gradeId: int
+  - course: string
+  - score: float
+}
+
+class Attendance {
+  - attendanceId: int
+  - date: Date
+  - status: string
+}
+
+class Calendar {
+  - eventId: int
+  - title: string
+  - date: DateTime
+}
+
+class Admin {
+  - adminId: int
+  + manageUsers()
+}
+
+User <|-- Student
+User <|-- Professor
+User <|-- Admin
+
+User "1" o-- "*" Message
+Student "1" o-- "*" Grade
+Student "1" o-- "*" Attendance
+Professor "1" o-- "*" Grade
+Professor "1" o-- "*" Attendance
+User "1" o-- "*" Calendar
+
+@enduml
