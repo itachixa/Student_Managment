@@ -49,3 +49,265 @@ body.dark-mode .settings-icon-custom {
 body.dark-mode .overlay {
   background: rgba(0, 0, 0, 0.5);
 }
+/* ================= DARK MODE ================= */
+
+/* Page settings */
+body.dark-mode .setting-container {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .setting-title {
+  color: #00BFFF;
+}
+
+body.dark-mode .profile-icon {
+  color: #00BFFF;
+}
+
+body.dark-mode .upload-button {
+  background-color: #00BFFF;
+  color: white;
+}
+
+body.dark-mode .upload-button:hover {
+  background-color: #0077cc;
+}
+
+body.dark-mode .setting-options h2 {
+  color: #ddd;
+}
+
+body.dark-mode .setting-options li {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+
+body.dark-mode .setting-options li:hover {
+  background-color: #2a2a2a;
+}
+
+/* Table générale */
+body.dark-mode table {
+  background-color: #1c1c1c;
+  color: #f1f1f1;
+}
+
+body.dark-mode th {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+body.dark-mode td {
+  color: #ddd;
+  border-color: #444;
+}
+
+body.dark-mode tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode tr:hover {
+  background-color: #333;
+}
+
+/* Chat */
+body.dark-mode .chat-box {
+  background-color: #1c1c1c;
+  border: 1px solid #444;
+  color: #eee;
+}
+
+body.dark-mode .chat-message.other {
+  background-color: #333;
+  color: #f1f1f1;
+}
+
+body.dark-mode .chat-message.me {
+  background-color: #2a3d2a;
+  color: #f1f1f1;
+}
+
+/* Calendar */
+body.dark-mode .calendar-page {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .calendar-table {
+  background-color: #1e1e1e;
+  border-color: #444;
+}
+
+body.dark-mode .calendar-table tr:nth-child(even) {
+  background-color: #222;
+}
+
+body.dark-mode .calendar-table tr:hover {
+  background-color: #2a2a2a;
+}
+
+/* Attendance */
+body.dark-mode .attendance-container {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .attendance-card {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+/* Notes (Marks) */
+body.dark-mode .Marks {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark-mode .Marks:hover {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode .mark-item {
+  background-color: #222;
+  color: #f1f1f1;
+}
+
+body.dark-mode .subject {
+  color: #f1f1f1;
+}
+/* ==================== DARK MODE FIX ==================== */
+
+/* HOME PAGE */
+body.dark-mode .home-container {
+  background-color: #121212 !important;
+  color: #f1f1f1;
+}
+
+body.dark-mode .home-container h1,
+body.dark-mode .home-container p {
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode .card {
+  background: #1e1e1e !important;
+  border: 1px solid #333;
+  color: #f1f1f1 !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* ATTENDANCE PROF PAGE */
+body.dark-mode .page-prof-attend {
+  background-color: #121212 !important;
+  color: #f1f1f1;
+}
+
+body.dark-mode .page-prof-attend table {
+  background-color: #1e1e1e !important;
+  color: #f1f1f1 !important;
+  border: 1px solid #444;
+}
+
+body.dark-mode .page-prof-attend th {
+  background-color: #007BFF !important;
+  color: white !important;
+}
+
+body.dark-mode .page-prof-attend td {
+  background-color: #222 !important;
+  border-bottom: 1px solid #444 !important;
+  color: #ddd !important;
+}
+
+body.dark-mode .page-prof-attend tr:nth-child(even) {
+  background-color: #2a2a2a !important;
+}
+
+body.dark-mode .page-prof-attend tr:hover {
+  background-color: #333 !important;
+}
+
+/* Les boutons/selects dans la table */
+body.dark-mode .attendance-select select {
+  background-color: #1c1c1c;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+body.dark-mode .attendance-select select:focus {
+  border-color: #00BFFF;
+  box-shadow: 0 0 5px rgba(0,191,255,0.4);
+}
+/* ================= DARK MODE COMPLEMENTS ================= */
+
+/* Boutons généraux */
+body.dark-mode button {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: 1px solid #444;
+  transition: 0.3s;
+}
+
+body.dark-mode button:hover {
+  background-color: #2a2a2a;
+  border-color: #00BFFF;
+  color: #fff;
+}
+
+/* Inputs / textarea / selects */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+  border-color: #00BFFF;
+  box-shadow: 0 0 5px rgba(0,191,255,0.4);
+  outline: none;
+}
+
+/* Liens */
+body.dark-mode a {
+  color: #00BFFF;
+  transition: 0.3s;
+}
+
+body.dark-mode a:hover {
+  color: #0077cc;
+}
+
+/* Scrollbar personnalisée (optionnel mais stylé) */
+body.dark-mode ::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* Overlay sombre + blur derrière */
+body.dark-mode .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6); /* assombrissement */
+  backdrop-filter: blur(6px);   /* floutage */
+  -webkit-backdrop-filter: blur(6px); /* compatibilité Safari */
+  z-index: 0; /* s’assure que c’est derrière le contenu */
+}

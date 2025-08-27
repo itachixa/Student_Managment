@@ -4,11 +4,14 @@ import { FiSettings } from "react-icons/fi"; // Icône paramètre stylisable
 import "../../Styles/Student/Home.css";
 import bgImage from "../../assets/background.png";
 
+import ThemeToggle from "../../components/ThemeToggle";
+
 function Home() {
   return (
     
     <div className="home-container" style={{ backgroundImage: `url(${bgImage})` }}>
       <div className="overlay" />
+      <ThemeToggle />
 
       {/* Icône Settings stylisée */}
       <div style={{ position: "absolute", top: "20px", right: "20px", zIndex: 2 }}>

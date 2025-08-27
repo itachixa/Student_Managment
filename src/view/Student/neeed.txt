@@ -1,0 +1,7 @@
+methode get pour  recupere(Attendance,mark,course, les message,les event,le calendrier ,timetable)
+-les  marks, les   differe seulont   le studentId
+-cousre attribue  a un groupe  d'eleve dans une meme section  , le calendrier aussi
+-les event sont completement independant  
+
+
+

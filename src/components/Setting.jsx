@@ -1,12 +1,20 @@
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; 
 import "../Styles/Setting.css";
-import BackButton from '../components/BackButton'; 
 
 function Setting() {
+  const navigate = useNavigate();
+
   return (
     <div className="setting-container">
-      <BackButton to="/Home" label="Back" iconSize={18} />
+      <button 
+        className="BackButton" 
+        onClick={() => navigate(-1)}  // 🔹 revient à la page précédente
+      >
+        ← Back
+      </button>
+
       <h1 className="setting-title">Settings</h1>
 
       <div className="profile-section">
