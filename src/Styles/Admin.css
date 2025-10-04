@@ -1,0 +1,189 @@
+.admin-dashboard {
+  display: flex;
+  height: 100vh;
+  background: #f9f9fb;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* === SIDEBAR === */
+.admin-dashboard .sidebar {
+  width: 220px;
+  background: #1e1e2f;
+  color: white;
+  padding: 20px;
+  flex-shrink: 0;
+}
+
+.admin-dashboard .sidebar h1 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.admin-dashboard .sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-dashboard .sidebar li {
+  padding: 12px;
+  margin: 8px 0;
+  background: #2a2a40;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.admin-dashboard .sidebar li:hover {
+  background: #3b3b5c;
+}
+
+/* === CONTENT === */
+.admin-dashboard .content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  color: #222; /* ✅ texte toujours lisible */
+}
+
+.admin-dashboard h2 {
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.admin-dashboard h3 {
+  margin: 12px 0;
+  color: #333;
+}
+
+/* === TABLES === */
+.admin-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.admin-dashboard table th,
+.admin-dashboard table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  color: #222; /* ✅ texte foncé lisible */
+}
+
+.admin-dashboard table th {
+  background: #f1f1f5;
+  font-weight: bold;
+}
+
+/* ✅ Lignes alternées */
+.admin-dashboard table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.admin-dashboard table tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+/* ✅ Effet survol */
+.admin-dashboard table tr:hover {
+  background: #e6f0ff;
+  transition: background 0.3s ease;
+}
+
+/* === BOUTONS === */
+.admin-dashboard button {
+  margin: 5px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+}
+
+.admin-dashboard .add-btn {
+  background: #4caf50;
+}
+
+.admin-dashboard button:hover {
+  opacity: 0.9;
+}
+
+/* ✅ Boutons spécifiques */
+.admin-dashboard button:nth-child(1) {
+  background: #2196f3; /* Modifier */
+}
+.admin-dashboard button:nth-child(2) {
+  background: #f44336; /* Supprimer */
+}
+
+/* === INPUTS & SELECT === */
+.admin-dashboard input,
+.admin-dashboard select {
+  padding: 8px;
+  margin: 10px 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #222;
+  background: #fff;
+}
+
+/* ============================= */
+/* === RESPONSIVE (Téléphone) === */
+/* ============================= */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Sidebar en haut */
+  .admin-dashboard .sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .admin-dashboard .sidebar h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .admin-dashboard .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .admin-dashboard .sidebar li {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  /* Content prend toute la largeur */
+  .admin-dashboard .content {
+    padding: 15px;
+  }
+
+  /* Tables en scroll horizontal */
+  .admin-dashboard table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Boutons & inputs full width */
+  .admin-dashboard button,
+  .admin-dashboard input,
+  .admin-dashboard select {
+    width: 100%;
+    margin: 8px 0;
+    font-size: 15px;
+  }
+}

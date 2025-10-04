@@ -1,58 +1,187 @@
-/* Pour centrer verticalement et horizontalement la page */
-.center-page {
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f9f9f9;
+}
+
+/* PAGE SPLIT */
+.page {
+  display: flex;
   height: 100vh;
-  width: 100vw; /* Correction ici : width doit être 100% de la largeur de la fenêtre */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('background.png'); /* Remplace avec le bon chemin */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 20px; /* Un petit padding pour éviter que ça touche les bords */
-  box-sizing: border-box;
 }
 
-/* Conteneur de boutons */
-.button-container {
+/* LEFT SIDE */
+.left-panel {
+  flex: 1;
+  background: #eaf2ff;
+  padding: 40px;
   display: flex;
-  flex-wrap: wrap; /* Permet de passer à la ligne si l’écran est petit */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-}
-
-/* Style des boutons avec icônes */
-.button-link {
-  text-decoration: double;
-}
-
-.icon-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  background-color: white;
-  border: 2px solid #007bff;
-  color: #007bff;
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
-  cursor: pointer;
-  min-width: 10px;
-  max-width: 160px;
   text-align: center;
 }
 
-.icon-button:hover {
-  background-color: #007bff;
-  color: white;
-  transform: scale(1.05);
+.brand {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;
 }
 
-.icon {
-  font-size: 22px;
+.title {
+  font-size: 36px;
+  line-height: 1.3;
+  color: #1a1a1a;
+}
+
+.title .highlight {
+  color: #0d6efd;
+}
+
+.illustration {
+  margin-top: 30px;
+}
+
+.illustration img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+/* RIGHT SIDE */
+.right-panel {
+  flex: 1;
+  background: #fff;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-panel h2 {
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.role-selection {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.role-btn {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.role-btn.active {
+  border-color: #0d6efd;
+  background: #eaf2ff;
+  color: #0d6efd;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.create-btn {
+  margin-top: 10px;
+  padding: 14px;
+  background: #0d6efd;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.create-btn:hover {
+  background: #084298;
+}
+
+.login-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-text a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.admin-link {
+  display: block;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #666;
+}
+
+.ico {
+  max-width: 120px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* 🔥 Responsive styles */
+@media (max-width: 900px) {
+  .page {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-panel, .right-panel {
+    flex: none;
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .illustration img {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .form input, .create-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .role-btn {
+    font-size: 12px;
+    padding: 10px;
+  }
 }

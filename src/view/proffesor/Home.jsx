@@ -1,30 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FiSettings } from "react-icons/fi"; // Icône paramètre stylisable
+import { FiSettings } from "react-icons/fi";
 import "../../Styles/Student/Home.css";
-import bgImage from "../../assets/background.png";
+import SRMImg from "../../assets/SRM.png";
+import TeacherImg from "../../assets/img/Teacher.jpeg";
 import ThemeToggle from "../../components/ThemeToggle";
 
-function Home_professor() {
+function Home() {
   return (
-    
-    <div className="home-container" style={{ backgroundImage: `url(${bgImage})` }}>
-    
-      <div className="overlay" />
-      <ThemeToggle />
-
-      {/* Icône Settings stylisée */}
-      <div style={{ position: "absolute", top: "20px", right: "20px", zIndex: 2 }}>
-        <Link className="settings-icon" to="/setting">
-          <FiSettings className="settings-icon-custom" />
-        </Link>
+    <div className="page">
+      {/* LEFT SIDE (branding like login) */}
+      <div className="left-panel">
+        <center>
+          <img className="ico" src={SRMImg} alt="SRM ico" />
+        </center>
+        <h2 className="brand">SRM</h2>
+        <h1 className="title">
+          Welcome to <span className="highlight">SRM</span> <br />
+          Management System
+        </h1>
+        <div className="illustration">
+          <center>
+            <img src={TeacherImg} alt="teacher" />
+          </center>
+        </div>
       </div>
 
-      <div className="home-content">
-        <header className="header">
-          <h1 className="sentence">Welcome to SRM Management System</h1>
-          <p className="sentence">Explore and manage your educational resources with ease.</p>
-        </header>
+      {/* RIGHT SIDE (functional cards) */}
+      <div className="right-panel">
+        <ThemeToggle />
+
+        {/* Settings icon */}
+        <div style={{ position: "absolute", top: "20px", right: "20px", zIndex: 2 }}>
+          <Link className="settings-icon" to="/setting">
+            <FiSettings className="settings-icon-custom" />
+          </Link>
+        </div>
+
+        <h2>Dashboard</h2>
+        <p className="subtitle">Explore and manage your educational resources</p>
 
         <div className="card-grid">
           <Link to="/page/proffesor/Attendance" className="card">📊 Attendance</Link>
@@ -32,14 +46,11 @@ function Home_professor() {
           <Link to="/page/proffesor/MarksP" className="card">📈 Marks</Link>
           <Link to="/home/proffesor/calendar" className="card">📅 Calendar</Link>
           <Link to="/home/proffesor/Event" className="card">🏛️ Events</Link>
-          <Link to="/home/proffesor/Corses" className="card">📚 Courses</Link>
-          <Link to="/home/proffesor/Chat" className="card" style={{ gridColumn: "1 / -1", textAlign: "center" }}>
-            💬 Chat
-          </Link>
+          <Link to="/home/proffesor/Chat" className="card full-width">💬 Chat</Link>
         </div>
       </div>
     </div>
   );
 }
 
-export default Home_professor;
+export default Home;

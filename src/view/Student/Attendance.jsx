@@ -1,6 +1,7 @@
 import React from "react";
 import "../../Styles/Student/Attendance.css";
-import BackButton from '../../components/BackButton';
+import BackButton from "../../components/BackButton";
+import AttendanceIMG from "../../assets/img/Attendance.jpeg";
 
 const attendanceData = [
   {
@@ -55,33 +56,56 @@ const attendanceData = [
 
 function Attendance() {
   return (
-    <div className="attendance-container">
-      <BackButton to="/Home" label="Back" iconSize={18} />
-      <h1 className="page-title">📊 Attendance</h1>
-      {attendanceData.map((item, index) => (
-        <div className="attendance-card" key={index}>
-          <div className="subject-header">
-            <span className="subject-name">{item.subject}</span>
-            {item.required !== undefined ? (
-              <span className="requirement">Required: {item.required}</span>
-            ) : (
-              <span className="margin">Margin: {item.margin}</span>
-            )}
-          </div>
-          <div className="status-bar">
-            <span className="present">Present: {item.present}</span>
-            <span className="absent"> Absent: {item.absent}</span>
-            <span className="total"> Total: {item.total}</span>
-            <span
-              className={`percentage ${
-                item.percentage < 75 ? "low" : "good"
-              }`}
-            >
-               {item.percentage}%
-            </span>
-          </div>
+    <div className="attendance-page">
+      <div className="left-panel">
+        <img src={AttendanceIMG} alt="Attendance Visual" />
+        <h2 className="brand">SRM</h2>
+        <h1 className="title">
+          Track Your <span className="highlight">Attendance</span>
+        </h1>
+      </div>
+
+      <div className="right-panel">
+        <BackButton to="/Home" label="Back" iconSize={18} />
+        <h2 className="page-title">📊 Attendance Overview</h2>
+
+        <div className="attendance-grid">
+          {attendanceData.map((item, index) => (
+            <div className="attendance-card" key={index}>
+              <div className="subject-header">
+                <span className="subject-name">{item.subject}</span>
+                {item.required !== undefined ? (
+                  <span className="requirement">Required: {item.required}</span>
+                ) : (
+                  <span className="margin">Margin: {item.margin}</span>
+                )}
+              </div>
+
+              <div className="status-bar">
+                <span className="present">✅ Present: {item.present}</span>
+                <span className="absent">❌ Absent: {item.absent}</span>
+                <span className="total">📌 Total: {item.total}</span>
+              </div>
+
+              <div className="percentage-section">
+                <span
+                  className={`percentage ${
+                    item.percentage < 75 ? "low" : "good"
+                  }`}
+                >
+                  {item.percentage}%
+                </span>
+                <div className="progress-bar">
+                  <div
+                    className="progress-fill"
+                    style={{ width: `${item.percentage}%` }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 }

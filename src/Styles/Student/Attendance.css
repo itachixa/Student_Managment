@@ -1,79 +1,150 @@
-.attendance-container {
-  background-color: #f9f9f9;
-  padding: 20px;
+.attendance-page {
+  display: flex;
+  flex-wrap: wrap;
   min-height: 100vh;
   font-family: "Segoe UI", sans-serif;
+  background-color: #f4f6f8;
 }
 
-.page-title {
+.attendance-page .left-panel {
+  flex: 1;
+  min-width: 300px;
+  background-color: #ffffff;
+  padding: 40px 20px;
   text-align: center;
-  font-size: 24px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.attendance-page .left-panel img {
+  max-width: 80%;
+  margin-bottom: 20px;
+}
+
+.attendance-page .brand {
+  font-size: 22px;
+  color: #0275d8;
+  margin-bottom: 10px;
+}
+
+.attendance-page .title {
+  font-size: 28px;
+  color: #333;
+}
+
+.attendance-page .highlight {
+  color: #5cb85c;
+}
+
+.attendance-page .right-panel {
+  flex: 2;
+  padding: 40px 30px;
+}
+
+.attendance-page .page-title {
+  font-size: 26px;
+  font-weight: 600;
   margin-bottom: 30px;
   color: #333;
 }
 
-.attendance-card {
-  background-color: white;
+.attendance-page .attendance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.attendance-page .attendance-card {
+  background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   padding: 20px;
-  margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.subject-header {
+.attendance-page .attendance-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.attendance-page .subject-header {
   display: flex;
   justify-content: space-between;
   font-weight: 600;
   color: #444;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-.requirement {
+.attendance-page .requirement {
   color: #d9534f;
 }
 
-.margin {
+.attendance-page .margin {
   color: #0275d8;
 }
 
-.status-bar {
+.attendance-page .status-bar {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
-.present {
+.attendance-page .present, .absent, .total {
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin: 5px 0;
+}
+
+.attendance-page .present {
   background-color: #dff0d8;
   color: #3c763d;
-  padding: 5px 10px;
-  border-radius: 8px;
 }
 
-.absent {
+.attendance-page .absent {
   background-color: #f2dede;
   color: #a94442;
-  padding: 5px 10px;
-  border-radius: 8px;
 }
 
-.total {
+.attendance-page .total {
   background-color: #eee;
   color: #555;
-  padding: 5px 10px;
-  border-radius: 8px;
+}
+
+.percentage-section {
+  margin-top: 10px;
 }
 
 .percentage {
   font-size: 18px;
   font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
 }
 
-.percentage.low {
+.attendance-page .percentage.low {
   color: #d9534f;
 }
 
-.percentage.good {
+.attendance-page .percentage.good {
   color: #5cb85c;
+}
+
+.attendance-page .progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  height: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.attendance-page .progress-fill {
+  height: 100%;
+  background-color: #5cb85c;
+  transition: width 0.3s ease;
+}
+
+.attendance-page .percentage.low + .progress-bar .progress-fill {
+  background-color: #d9534f;
 }

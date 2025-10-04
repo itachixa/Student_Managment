@@ -1,4 +1,4 @@
-.event-page {
+.marks-page {
   display: flex;
   flex-wrap: wrap;
   min-height: 100vh;
@@ -7,7 +7,7 @@
 }
 
 /* LEFT PANEL */
-.event-page .left-panel {
+.marks-page .left-panel {
   flex: 1;
   min-width: 300px;
   background-color: #ffffff;
@@ -16,111 +16,130 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
-.event-page .left-panel img {
+.marks-page .left-panel img {
   max-width: 80%;
   margin-bottom: 20px;
 }
 
-.event-page .brand {
+.marks-page .brand {
   font-size: 22px;
   color: #0275d8;
   margin-bottom: 10px;
 }
 
-.event-page .title {
+.marks-page .title {
   font-size: 28px;
   color: #333;
 }
 
-.event-page .highlight {
+.marks-page .highlight {
   color: #007BFF;
 }
 
 /* RIGHT PANEL */
-.event-page .right-panel {
+.marks-page .right-panel {
   flex: 2;
   padding: 40px 30px;
 }
 
-.event-page .event-header {
+.marks-page .marks-header {
   text-align: center;
   margin-bottom: 30px;
 }
 
-.event-page .event-title {
+.marks-page .marks-title {
   font-size: 32px;
   margin: 16px 0;
   color: #007BFF;
   font-weight: 700;
 }
 
-.event-page .event-subtitle {
+.marks-page .marks-subtitle {
   color: #444;
   font-size: 18px;
 }
 
-/* EVENT CARD */
-.event-page .event-card {
+/* MARKS GRID */
+.marks-page .marks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.marks-page .marks-card {
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   padding: 20px;
   text-align: center;
-  border: 2px solid #87CEEB;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  border-color: #00BFFF; /* bleu ciel plus vif au survol */
 }
 
-.event-page .event-card:hover {
+.marks-page .marks-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-  border-color: #00BFFF;
 }
 
-.event-page .event-img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.event-page .event-name {
-  font-size: 22px;
+.marks-page .subject-name {
   font-weight: 600;
+  font-size: 18px;
   color: #333;
   margin-bottom: 10px;
 }
 
-.event-page .event-description {
-  font-size: 16px;
-  color: #555;
+.marks-page .mark-value {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.marks-page .mark-value.excellent {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.marks-page .mark-value.good {
+  background-color: #d9edf7;
+  color: #31708f;
+}
+
+.marks-page .mark-value.average {
+  background-color: #fcf8e3;
+  color: #8a6d3b;
+}
+
+.marks-page .mark-value.poor {
+  background-color: #f2dede;
+  color: #a94442;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-  .event-page {
+  .marks-page {
     flex-direction: column;
   }
 
-  .event-page .left-panel {
+  .marks-page .left-panel {
     padding: 30px 20px;
   }
 
-  .event-page .right-panel {
+  .marks-page .right-panel {
     padding: 20px;
   }
 
-  .event-page .event-title {
+  .marks-page .marks-title {
     font-size: 24px;
   }
 
-  .event-page .event-subtitle {
+  .marks-page .marks-subtitle {
     font-size: 14px;
   }
 
-  .event-page .event-name {
+  .marks-page .mark-value {
     font-size: 18px;
-  }
-
-  .event-page .event-description {
-    font-size: 14px;
   }
 }

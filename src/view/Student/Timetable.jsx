@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
 import { FaCalendarAlt } from "react-icons/fa";
 import BackButton from "../../components/BackButton";
-import "../../Styles/Event.css";
 import { useReactToPrint } from "react-to-print";
-
-const Timetable = () => {
+import "../../Styles/Student/Timetable.css";
+import TimetableIMG from "../../assets/img/Timetable.jpeg";
+import Timetable_prof from "../proffesor/Timetable";
+function Timetable() {
   const tableRef = useRef();
 
   const handlePrint = useReactToPrint({
@@ -14,24 +15,34 @@ const Timetable = () => {
 
   return (
     <div className="page">
-      <BackButton to="/Home" label="Back" iconSize={18} />
-      <header className="page-header">
-        <center>
-          <FaCalendarAlt size={60} color="#007BFF" />
-          <h1>Timetable</h1>
-          <p>Here is your weekly schedule:</p>
-        </center>
-      </header>
+      {/* LEFT PANEL */}
+      <div className="left-panel">
+        <h2 className="brand">SRM</h2>
+        <img src={TimetableIMG} alt="" />
+        <h1 className="title">
+          Weekly <span className="highlight">Timetable</span>
+        </h1>
+        <p className="subtitle">
+          Manage and download your class schedule easily.
+        </p>
+      </div>
 
-      <section className="page-content">
+      {/* RIGHT PANEL */}
+      <div className="right-panel">
+        <BackButton to="/Home" label="Back" iconSize={18} />
+        <header className="page-header">
+          <FaCalendarAlt size={50} color="#0d6efd" />
+          <h2 className="page-title">Your Timetable</h2>
+        </header>
+
         <div className="timetable-container" ref={tableRef}>
           <table className="timetable">
             <thead>
               <tr>
                 <th>Time</th>
-                <th>Day1</th>
-                <th>Day1</th>
-                <th>Wed</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
                 <th>Thursday</th>
                 <th>Friday</th>
               </tr>
@@ -55,7 +66,9 @@ const Timetable = () => {
               </tr>
               <tr>
                 <td>10:00 - 11:00</td>
-                <td colSpan="5" className="break">Break</td>
+                <td colSpan="5" className="break">
+                  ☕ Break
+                </td>
               </tr>
               <tr>
                 <td>11:00 - 12:00</td>
@@ -76,14 +89,15 @@ const Timetable = () => {
             </tbody>
           </table>
         </div>
-        <center>
+
+        <div className="download-container">
           <button className="download-btn" onClick={handlePrint}>
-            Download Timetable
+            ⬇️ Download Timetable
           </button>
-        </center>
-      </section>
+        </div>
+      </div>
     </div>
   );
-};
+}
 
 export default Timetable;

@@ -1,17 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaFileAlt } from "react-icons/fa";
 import BackButton from "../../components/BackButton";
-import "../../Styles/Student/marks.css";
-
-const marksData = [
-  { subject: "Data Structure and Algorithms", value: 14 },
-  { subject: "Transforme and Bonudary Value Probleme", value: 1 },
-  { subject: "Advance programming", value: 14 },
-  { subject: "Operating Systemes", value: 9.5 },
-  { subject: "Universal Human Value", value: 14 },
-  { subject: "Microbiology", value: 14 },
-  { subject: "Professional Ethique", value: 7 },
-];
+import "../../Styles/Student/Marks.css";
+import MarksIMG from "../../assets/img/Marks.jpeg";
 
 const getClassForMark = (value) => {
   if (value >= 13) return "excellent";
@@ -20,31 +11,77 @@ const getClassForMark = (value) => {
   return "poor";
 };
 
-const Marks = () => {
+function Marks() {
+  const [marks, setMarks] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // 🔑 Récupération de l'ID étudiant connecté (stocké après login)
+  let studentId = localStorage.getItem("studentId");
+
+  useEffect(() => {
+    const fetchMarks = async () => {
+      try {
+        const res = await fetch(`http://localhost:3008/grades/student/${studentId}`);
+        if (!res.ok) throw new Error("Erreur API");
+        const data = await res.json();
+        setMarks(data);
+      } catch (err) {
+        console.error("Erreur récupération des notes:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (studentId) {
+      fetchMarks();
+    } else {
+      setLoading(false);
+    }
+  }, [studentId]);
+
+  if (loading) {
+    return <p className="loading">⏳ Chargement des notes...</p>;
+  }
+
   return (
-    <div className="page">
-      <BackButton to="/Home" label="Back" iconSize={18} />
-      <header className="page-header">
-        <center>
-          <FaFileAlt size={60} color="#007BFF" className="icon" />
-          <h2>Marks</h2>
-        </center>
-      </header>
-      <section className="page-content">
-        <p>Your marks will be displayed here once available.</p>
-        <ul className="marks-list">
-          {marksData.map((item, index) => (
-            <li key={index} className="mark-item">
-              <span className="subject">{item.subject}</span>
-              <span className={`value ${getClassForMark(item.value)}`}>
-                {item.value}/15
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
+    <div className="marks-page">
+      {/* LEFT PANEL */}
+      <div className="left-panel">
+        <img src={MarksIMG} alt="Marks Visual" />
+        <h2 className="brand">SRM</h2>
+        <h1 className="title">
+          Check Your <span className="highlight">Marks</span>
+        </h1>
+      </div>
+
+      {/* RIGHT PANEL */}
+      <div className="right-panel">
+        <BackButton to="/Home" label="Back" iconSize={18} />
+        <header className="marks-header">
+          <FaFileAlt size={60} color="#007BFF" />
+          <h2 className="marks-title">Marks Overview</h2>
+          <p className="marks-subtitle">
+            View your internal marks for each subject.
+          </p>
+        </header>
+
+        <div className="marks-grid">
+          {marks.length > 0 ? (
+            marks.map((item, index) => (
+              <div className="marks-card" key={index}>
+                <div className="subject-name">{item.course}</div>
+                <div className={`mark-value ${getClassForMark(item.score)}`}>
+                  {item.score}/20
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className="no-marks">⚠️ No marks available for this student.</p>
+          )}
+        </div>
+      </div>
     </div>
   );
-};
+}
 
 export default Marks;

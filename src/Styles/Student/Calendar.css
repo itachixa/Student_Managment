@@ -1,0 +1,118 @@
+.page {
+  display: flex;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+
+/* LEFT PANEL */
+.left-panel {
+  flex: 1;
+  background: #eaf2ff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 34px;
+  line-height: 1.4;
+  color: #1a1a1a;
+}
+
+.title .highlight {
+  color: #0d6efd;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+  flex: 2;
+  background: #fff;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.page-title {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+.calendar-container {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.calendar-table th,
+.calendar-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.calendar-table th {
+  background: #0d6efd;
+  color: white;
+  font-weight: bold;
+}
+
+.school-day {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.holiday {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    display: none; /* hide left panel on mobile */
+  }
+
+  .right-panel {
+    padding: 20px;
+  }
+
+  .calendar-table th,
+  .calendar-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+}

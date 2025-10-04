@@ -21,6 +21,7 @@ import Calendar_prof from './view/proffesor/Calendar';
 import Event_prof from './view/proffesor/event';
 import Chat_prof from './view/proffesor/chat';
 import Courses_Prof from './view/proffesor/Courses';
+import Admin from './view/Admin/Admin';
 import './firebase';
 
 
@@ -66,6 +67,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/home/proffesor/Event" element={<Event_prof />} />
         <Route path="/home/proffesor/Chat" element={<Chat_prof />} />
         <Route path="/home/proffesor/Corses" element={<Courses_Prof/>} />
+        <Route path="/Admin" element={<Admin/>} />
+
 
 
       </Routes>

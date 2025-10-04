@@ -1,33 +1,47 @@
-import { FaBookOpen } from 'react-icons/fa';
-import BackButton from '../../components/BackButton';
-import "../../Styles/Student/Courses.css"
+import React from "react";
+import { FaBookOpen } from "react-icons/fa";
+import BackButton from "../../components/BackButton";
+import "../../Styles/Student/Courses.css";
+import CoursesIMG from "../../assets/img/Course.jpeg"; // ajoute une image ici
 
 function Courses() {
   return (
-    <div className="page">
-      <BackButton to="/Home" label="Back" iconSize={18} />
-      <center>
-      <FaBookOpen size={60} color="#007BFF" />
-      <h2>Courses</h2>
-      </center>
-      <center>
-      <p>View your enrolled courses and access materials.</p>
-      <section className="page-content">
-      <ul>
-          <li className="Marks">Data Structure and Algorithms</li>
-          <li className="Marks">Transforme and Bonudary  Value Probleme</li>
-          <li className="Marks">Advance  programming </li>
-          <li className="Marks">Operating Systemes</li>
-          <li className="Marks">Universal Human Vailue</li>
-          <li className="Marks">Computer Organisation and  Architecture</li>
-          <li className="Marks">Digital Thinking And Methodology</li>
-          <li className="Marks">Solid  State Device </li>
-          <li className="Marks">Microbiology</li>
-          <li className="Marks">Professional Ethique</li>
-        </ul>
+    <div className="courses-page">
+      {/* LEFT PANEL */}
+      <div className="left-panel">
+        <img src={CoursesIMG} alt="Courses Visual" />
+        <h2 className="brand">SRM</h2>
+        <h1 className="title">
+          Explore Your <span className="highlight">Courses</span>
+        </h1>
+      </div>
+
+      {/* RIGHT PANEL */}
+      <div className="right-panel">
+        <BackButton to="/Home" label="Back" iconSize={18} />
+        <header className="courses-header">
+         <center> <FaBookOpen size={60} color="#0d6efd" />
+          <h2 className="courses-title">Courses</h2></center>
+          <p className="courses-subtitle">
+            View your enrolled courses and access study materials.
+          </p>
+        </header>
+
+        <section className="courses-list">
+          <ul>
+            <li>📘 Data Structure and Algorithms</li>
+            <li>📘 Transform and Boundary Value Problems</li>
+            <li>📘 Advanced Programming</li>
+            <li>📘 Operating Systems</li>
+            <li>📘 Universal Human Values</li>
+            <li>📘 Computer Organization and Architecture</li>
+            <li>📘 Digital Thinking and Methodology</li>
+            <li>📘 Solid State Devices</li>
+            <li>📘 Microbiology</li>
+            <li>📘 Professional Ethics</li>
+          </ul>
         </section>
-        </center>
-        
+      </div>
     </div>
   );
 }
