@@ -1,62 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../Styles/Student/Attendance.css";
 import BackButton from "../../components/BackButton";
 import AttendanceIMG from "../../assets/img/Attendance.jpeg";
 
-const attendanceData = [
-  {
-    subject: "Transforms And Boundary Value Problems",
-    present: 3,
-    absent: 2,
-    total: 5,
-    required: 3,
-    percentage: 60,
-  },
-  {
-    subject: "Operating Systems",
-    present: 3,
-    absent: 2,
-    total: 5,
-    required: 3,
-    percentage: 60,
-  },
-  {
-    subject: "Data Structures And Algorithms",
-    present: 3,
-    absent: 0,
-    total: 3,
-    margin: 1,
-    percentage: 100,
-  },
-  {
-    subject: "Computer Organization And Architecture",
-    present: 4,
-    absent: 0,
-    total: 4,
-    margin: 1,
-    percentage: 100,
-  },
-  {
-    subject: "Artificial Intelligence",
-    present: 2,
-    absent: 1,
-    total: 3,
-    required: 2,
-    percentage: 66,
-  },
-  {
-    subject: "Cyber Security Fundamentals",
-    present: 5,
-    absent: 0,
-    total: 5,
-    margin: 2,
-    percentage: 100,
-  },
-];
-
 function Attendance() {
+  const [attendanceData, setAttendanceData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const API_BASE =
+    window.location.hostname === "localhost"
+      ? "http://localhost:3008"
+      : "https://schoolapp-neon-backend.onrender.com";
+
+  const studentId = localStorage.getItem("studentId");
+
+  useEffect(() => {
+    const fetchAttendance = async () => {
+      try {
+        if (!studentId) {
+          alert("⚠️ No student ID found. Please log in again.");
+          return;
+        }
+
+        const res = await fetch(`${API_BASE}/attendance/student/${studentId}`);
+        if (!res.ok) throw new Error("Error fetching attendance data");
+
+        const data = await res.json();
+        setAttendanceData(data);
+      } catch (err) {
+        console.error("❌ Attendance fetch error:", err);
+        alert("⚠️ Unable to load attendance data");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAttendance();
+  }, [studentId, API_BASE]);
+
+  if (loading) {
+    return (
+      <div className="attendance-page">
+        <div className="loading-container">
+          <h2 className="loading-text">⏳ Loading attendance data...</h2>
+        </div>
+      </div>
+    );
+  }
+
+  // Calcul du total des jours présents et absents
+  const totalPresent = attendanceData.filter(a => a.status === "Present").length;
+  const totalAbsent = attendanceData.filter(a => a.status === "Absent").length;
+  const totalDays = totalPresent + totalAbsent;
+  const presentPercentage = totalDays > 0 ? Math.round((totalPresent / totalDays) * 100) : 0;
+
   return (
     <div className="attendance-page">
+      {/* Partie gauche */}
       <div className="left-panel">
         <img src={AttendanceIMG} alt="Attendance Visual" />
         <h2 className="brand">SRM</h2>
@@ -65,46 +65,50 @@ function Attendance() {
         </h1>
       </div>
 
+      {/* Partie droite */}
       <div className="right-panel">
         <BackButton to="/Home" label="Back" iconSize={18} />
         <h2 className="page-title">📊 Attendance Overview</h2>
 
-        <div className="attendance-grid">
-          {attendanceData.map((item, index) => (
-            <div className="attendance-card" key={index}>
-              <div className="subject-header">
-                <span className="subject-name">{item.subject}</span>
-                {item.required !== undefined ? (
-                  <span className="requirement">Required: {item.required}</span>
-                ) : (
-                  <span className="margin">Margin: {item.margin}</span>
-                )}
+        {attendanceData.length === 0 ? (
+          <p className="no-data">No attendance records found.</p>
+        ) : (
+          <>
+            {/* Statistiques globales */}
+            <div className="summary">
+              <p>✅ Present: {totalPresent} days</p>
+              <p>❌ Absent: {totalAbsent} days</p>
+              <div className="progress-bar">
+                <div
+                  className="progress-fill"
+                  style={{
+                    width: `${presentPercentage}%`,
+                    backgroundColor: presentPercentage >= 75 ? "#4CAF50" : "#FF6B6B"
+                  }}
+                ></div>
               </div>
-
-              <div className="status-bar">
-                <span className="present">✅ Present: {item.present}</span>
-                <span className="absent">❌ Absent: {item.absent}</span>
-                <span className="total">📌 Total: {item.total}</span>
-              </div>
-
-              <div className="percentage-section">
-                <span
-                  className={`percentage ${
-                    item.percentage < 75 ? "low" : "good"
-                  }`}
-                >
-                  {item.percentage}%
-                </span>
-                <div className="progress-bar">
-                  <div
-                    className="progress-fill"
-                    style={{ width: `${item.percentage}%` }}
-                  ></div>
-                </div>
-              </div>
+              <p>{presentPercentage}% Attendance</p>
             </div>
-          ))}
-        </div>
+
+            {/* Liste détaillée */}
+            <div className="attendance-grid">
+              {attendanceData.map((item, index) => (
+                <div className="attendance-card" key={index}>
+                  <div className="subject-header">
+                    <span className="subject-name">{item.date}</span>
+                  </div>
+                  <div className="status-bar">
+                    {item.status === "Present" ? (
+                      <span className="present">✅ Present</span>
+                    ) : (
+                      <span className="absent">❌ Absent</span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
