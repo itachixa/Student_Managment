@@ -28,7 +28,6 @@ function Student_Marks({ name }) {
             </tr>
 
         </>
-
     );
 }
 export default Student_Marks; 
