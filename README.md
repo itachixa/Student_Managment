@@ -10,11 +10,11 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="img/image1.png" alt="project-screenshot" width="400" height="400/">
+<img src="img/image1.png" alt="project-screenshot" >
 
-<img src="img/image2.png" alt="project-screenshot" width="400" height="400/">
+<img src="img/image2.png" alt="project-screenshot" >
 
-<img src="img/image3.png" alt="project-screenshot" width="400" height="400/">
+<img src="img/image3.png" alt="project-screenshot" >
 
 <h2>🛠️ Installation Steps:</h2>
 
