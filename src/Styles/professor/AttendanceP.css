@@ -1,105 +1,207 @@
 .page-prof-attend {
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-    background-color: #f9fafe;
-    min-height: 100vh;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2f7 0%, #ffffff 100%);
+  font-family: "Segoe UI", sans-serif;
+  padding: 40px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
+/* Apparition douce */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TITRES */
 h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 32px;
+  margin-bottom: 5px;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
+h2 {
+  color: #4a5568;
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* TABLE */
 table {
-    width: 90%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
+  width: 90%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
 }
 
-th {
-    background-color: #3f51b5;
-    color: white;
-    padding: 15px;
-    text-align: left;
-    font-size: 16px;
+/* Header collant (sticky) */
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(135deg, #007bff, #0056d6);
+  color: white;
+  padding: 14px;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
 }
 
-td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #e0e0e0;
-    font-size: 15px;
+tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #edf2f7;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 tr:nth-child(even) {
-    background-color: #f5f7fa;
+  background-color: #f9fafc;
 }
 
 tr:hover {
-    background-color: #e8f0fe;
+  background-color: #eaf3ff;
+  transition: 0.3s;
+}
+
+/* SELECT + ICONES */
+.attendance-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+  position: relative;
 }
 
 .attendance-select select {
-    padding: 6px 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-    background-color: #fff;
-    appearance: none;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23444"><path d="M4 6l4 4 4-4"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 12px;
+  appearance: none;
+  padding: 8px 14px;
+  border: 2px solid #cbd5e0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  background-color: #fff;
+  cursor: pointer;
+  width: 120px;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="16" viewBox="0 0 24 24" width="16"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  transition: all 0.25s ease-in-out;
+}
+
+.attendance-select select:hover {
+  border-color: #007bff;
 }
 
 .attendance-select select:focus {
-    outline: none;
-    border-color: #3f51b5;
-    box-shadow: 0 0 5px rgba(63, 81, 181, 0.3);
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0,123,255,0.3);
 }
 
-.BackButton {
-    margin-bottom: 20px;
-}
-
-.attendance-select {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.attendance-select select {
-    padding: 5px 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    outline: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
+/* Couleurs dynamiques */
 .attendance-select.present select {
-    border-color: green;
-    color: green;
+  border-color: #22c55e;
+  color: #16a34a;
+  background-color: #ecfdf5;
 }
 
 .attendance-select.absent select {
-    border-color: red;
-    color: red;
+  border-color: #ef4444;
+  color: #b91c1c;
+  background-color: #fef2f2;
 }
 
+/* ICONES */
 .status-icon {
-    font-size: 1.5rem;
+  font-size: 1.4rem;
+  transition: transform 0.2s ease;
 }
 
 .status-icon.present {
-    color: green;
+  color: #22c55e;
 }
 
 .status-icon.absent {
-    color: red;
+  color: #ef4444;
+}
+
+.status-icon:hover {
+  transform: scale(1.2);
+}
+
+/* BOUTON SAVE */
+.save-btn {
+  background: linear-gradient(135deg, #007bff, #0056d6);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+  background: linear-gradient(135deg, #0056d6, #0041a8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 123, 255, 0.4);
+}
+
+/* BACK BUTTON */
+.BackButton {
+  align-self: flex-start;
+  margin-bottom: 20px;
+  margin-left: 5%;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  thead th {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  tbody td {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  .attendance-select select {
+    width: 100px;
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .save-btn {
+    width: 90%;
+    font-size: 15px;
+    padding: 10px 20px;
+  }
 }

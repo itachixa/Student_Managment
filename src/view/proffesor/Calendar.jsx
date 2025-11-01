@@ -55,7 +55,7 @@ function Calendar() {
 
       {/* RIGHT PANEL */}
       <div className="right-panel">
-        <BackButton to="/Home" label="Back" iconSize={18} />
+        <BackButton to="/home/proffesor" label="Back" iconSize={18} />
         <header className="page-header">
           <FaCalendarAlt size={50} color="#0d6efd" />
           <h2 className="page-title">School Calendar - August 2025</h2>

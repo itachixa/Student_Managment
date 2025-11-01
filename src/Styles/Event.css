@@ -2,122 +2,176 @@
   display: flex;
   flex-wrap: wrap;
   min-height: 100vh;
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f4f6f8;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #eef3f8, #dce9f9);
+  color: #333;
+  overflow-x: hidden;
 }
 
 /* LEFT PANEL */
 .event-page .left-panel {
   flex: 1;
-  min-width: 300px;
+  min-width: 320px;
   background-color: #ffffff;
-  padding: 40px 20px;
+  padding: 60px 30px;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
-
-.event-page .left-panel img {
-  max-width: 80%;
-  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  border-right: 3px solid #007bff20;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .event-page .brand {
-  font-size: 22px;
+  font-size: 26px;
   color: #0275d8;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .event-page .title {
-  font-size: 28px;
+  font-size: 34px;
+  font-weight: 700;
   color: #333;
 }
 
 .event-page .highlight {
   color: #007BFF;
+  text-shadow: 0 0 5px #007bff55;
 }
 
 /* RIGHT PANEL */
 .event-page .right-panel {
-  flex: 2;
-  padding: 40px 30px;
+  flex: 2.5;
+  padding: 50px 40px;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .event-page .event-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .event-page .event-title {
-  font-size: 32px;
+  font-size: 36px;
   margin: 16px 0;
   color: #007BFF;
   font-weight: 700;
 }
 
 .event-page .event-subtitle {
-  color: #444;
+  color: #555;
   font-size: 18px;
+  margin-top: -5px;
 }
 
 /* EVENT CARD */
 .event-page .event-card {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 25px 30px;
   text-align: center;
-  border: 2px solid #87CEEB;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 2px solid transparent;
+  transition: all 0.35s ease;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .event-page .event-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
   border-color: #00BFFF;
+  background: linear-gradient(180deg, #fff, #f9fcff);
 }
 
 .event-page .event-img {
   max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.event-page .event-card:hover .event-img {
+  transform: scale(1.03);
 }
 
 .event-page .event-name {
-  font-size: 22px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 12px;
 }
 
 .event-page .event-description {
   font-size: 16px;
+  line-height: 1.6;
   color: #555;
+  text-align: justify;
+  white-space: pre-line;
+}
+
+/* BACK BUTTON STYLING (OPTIONAL IMPROVEMENT) */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.back-button:hover {
+  background: #005dc1;
+  transform: scale(1.05);
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .event-page {
     flex-direction: column;
   }
 
   .event-page .left-panel {
-    padding: 30px 20px;
+    padding: 40px 20px;
+    border-right: none;
+    border-bottom: 2px solid #007bff20;
   }
 
   .event-page .right-panel {
-    padding: 20px;
+    padding: 25px 20px;
   }
 
   .event-page .event-title {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .event-page .event-subtitle {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .event-page .event-name {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .event-page .event-description {

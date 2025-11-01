@@ -1,12 +1,44 @@
-# React + Vite
+<h1 align="center" id="title">Student Management</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center"><img src="img/image.png" alt="project-image"></p>
 
-Currently, two official plugins are available:
+<p id="description">The Student Management System (SMS) was developed to handle student data efficiently. Traditional methods of managing attendance marks and communication often involve manual entry making them error-prone and time-consuming. This project leverages modern technologies to offer a unified responsive platform that simplifies the management of educational records.</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h2>🚀 Demo</h2>
 
-## Expanding the ESLint configuration
+[https://student-managment-one.vercel.app/](https://student-managment-one.vercel.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<h2>Project Screenshots:</h2>
+
+<img src="img/image1.png" alt="project-screenshot" width="400" height="400/">
+
+<img src="img/image2.png" alt="project-screenshot" width="400" height="400/">
+
+<img src="img/image3.png" alt="project-screenshot" width="400" height="400/">
+
+<h2>🛠️ Installation Steps:</h2>
+
+<p>1. Clone the repository</p>
+
+<p>2. Install necessary dependencies</p>
+
+```
+npm install
+```
+
+<p>3. Run the project</p>
+
+```
+npm run dev
+```
+
+  
+  
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+*   React
+*   spring-Boot
+*   Mysql
+*   xampp
