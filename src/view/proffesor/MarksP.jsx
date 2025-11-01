@@ -91,7 +91,7 @@ function MarksP() {
 
         {students.map((s, idx) => (
           <div key={s.studentId} className="marks-row">
-            <span className="col-name">#{idx + 1} {s.name}</span>
+            <span className="col-name">{idx + 1}: {s.name}</span>
 
             <input
               type="number"
